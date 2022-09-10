@@ -1,0 +1,29 @@
+<mat-card class="mat-card">  
+    <mat-card-content >
+        <div class="header"> 
+            <h2>LOGIN</h2> 
+        </div>
+        <form [formGroup]="loginForm" class="login" (ngSubmit)="login()"> 
+            <div class="user-input" >
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label class="inside">Username</mat-label>  
+                    <input matInput formControlName="username" placeholder="Username"> 
+                    <mat-error *ngIf="loginForm.invalid" class="password">Username is Required</mat-error> 
+                </mat-form-field>   
+            </div> 
+            <div class="user-input"> 
+                <span class="alink">ForgotPassword</span>
+                <mat-form-field class="full-width" appearance="outline"> 
+                    <mat-label class="inside">Password</mat-label>
+                    <input matInput formControlName="password" matInput [type]="hide?'password':'text'" required/>   
+                    <mat-error *ngIf="loginForm.invalid" class="password">Password is Required</mat-error>   
+                    <button type="button" mat-icon-button matSuffix (click)="hide = !hide"[attr.aria-label]="'Hide password'" 
+                     [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off':'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>   
+            </div>
+            <button mat-flat-button color="accent" [disabled]="loginForm.controls['username'].errors || loginForm.controls['password'].errors" type="submit"  routerLink="/weather">Login</button>   
+        </form>  
+    </mat-card-content>
+</mat-card> 

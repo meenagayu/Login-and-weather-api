@@ -1,0 +1,9 @@
+.body 
+{   
+    min-height: 100%; 
+    padding: 60px 1rem; 
+    background: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__480.jpg'); 
+    display: block; 
+    align-content: center;
+
+}  
